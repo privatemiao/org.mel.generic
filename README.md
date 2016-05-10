@@ -1,0 +1,1 @@
+General Spring MVC JPA Shiro Project Reference

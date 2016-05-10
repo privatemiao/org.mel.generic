@@ -7,27 +7,10 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" init-method="createDataSource" destroy-method="close" lazy-init="false">
-		<property name="driverClassName" value="${database.mysql.driverClassName}" />
-		<property name="url" value="${database.mysql.url}" />
-		<property name="username" value="${database.mysql.username}" />
-		<property name="password" value="${database.mysql.password}" />
-
-		<property name="initialSize" value="${database.mysql.initialSize}" />
-		<property name="maxActive" value="${database.mysql.maxActive}" />
-		<property name="maxWait" value="${database.mysql.maxWait}" />
-		<property name="maxIdle" value="${database.mysql.maxIdle}" />
-		<property name="minIdle" value="${database.mysql.minIdle}" />
-		<property name="removeAbandoned" value="${database.mysql.removeAbandoned}" />
-		<property name="removeAbandonedTimeout" value="${database.mysql.removeAbandonedTimeout}" />
-		<property name="connectionProperties" value="${database.mysql.connectionProperties}" />
-
-		<property name="testWhileIdle" value="${database.mysql.testWhileIdle}" />
-		<property name="testOnBorrow" value="${database.mysql.testOnBorrow}" />
-		<property name="testOnReturn" value="${database.mysql.testOnReturn}" />
-		<property name="validationQuery" value="${database.mysql.validationQuery}" />
-		<property name="validationQueryTimeout" value="${database.mysql.validationQueryTimeout}" />
-		<property name="timeBetweenEvictionRunsMillis" value="${database.mysql.timeBetweenEvictionRunsMillis}" />
-		<property name="numTestsPerEvictionRun" value="${database.mysql.numTestsPerEvictionRun}" />
+		<property name="driverClassName" value="org.h2.Driver" />
+		<property name="url" value="jdbc:h2:file:~/.h2/generic.db;AUTO_SERVER=TRUE;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE" />
+		<property name="username" value="sa" />
+		<property name="password" value="" />
 	</bean>
 
 	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
@@ -39,8 +22,8 @@
 		</property>
 		<property name="jpaVendorAdapter">
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-				<property name="showSql" value="${database.mysql.showsql}" />
-				<property name="generateDdl" value="${database.mysql.generateDdl}" />
+				<property name="showSql" value="true" />
+				<property name="generateDdl" value="update" />
 				<property name="databasePlatform" value="${database.mysql.databasePlatform}" />
 			</bean>
 		</property>
