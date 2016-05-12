@@ -25,8 +25,8 @@ public class ResourceService {
 	protected Logger logger = LoggerFactory.getLogger(ResourceService.class);
 	// 所有节点
 	private List<Node> nodes = null;
-	private Map<String, Node> nodeIndex = new HashMap<>();
-	private Map<String, Node> exceptedNodes = new HashMap<>();
+	private Map<String, Node> nodeIndex = new HashMap<String, Node>();
+	private Map<String, Node> exceptedNodes = new HashMap<String, Node>();
 	
 	@Resource
 	private SecurityRightService securityRightService;
