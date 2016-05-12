@@ -6,4 +6,11 @@
     <version>1.0.0</version>
   </parent>
   <artifactId>generic-security</artifactId>
+  <dependencies>
+  	<dependency>
+  		<groupId>org.mel</groupId>
+  		<artifactId>generic-framework</artifactId>
+  		<version>1.0.0</version>
+  	</dependency>
+  </dependencies>
 </project>
