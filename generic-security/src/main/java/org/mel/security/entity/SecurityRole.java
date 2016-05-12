@@ -3,23 +3,18 @@ package org.mel.security.entity;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
-import javax.persistence.Table;
 
 import org.mel.framework.IDEntity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name = "security_role")
 public class SecurityRole extends IDEntity {
-	@Column(name = "name")
 	private String name;
 
-	@Column(name = "description")
 	private String description;
 
 	// =================================================================

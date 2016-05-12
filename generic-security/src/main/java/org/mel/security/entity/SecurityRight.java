@@ -6,19 +6,16 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
-import javax.persistence.Table;
 
 import org.mel.framework.IDEntity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name = "security_right")
 public class SecurityRight extends IDEntity {
-	@Column(unique = true, name = "uri")
+	@Column(unique = true)
 	private String uri;
 
-	@Column(name = "name")
 	private String name;
 
 	// ===============================================================

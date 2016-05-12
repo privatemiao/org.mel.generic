@@ -4,32 +4,25 @@ import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
-import javax.persistence.Table;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.mel.framework.IDEntity;
 import org.mel.framework.domain.UserStatus;
 
 @Entity
-@Table(name = "security_user")
 public class SecurityUser extends IDEntity {
-	@Column(name = "login_id")
 	private String loginId;
 
-	@Column(name = "password")
 	private String password;
 
-	@Column(name = "user_status")
 	@Enumerated(EnumType.STRING)
 	private UserStatus userStatus;
 
-	@Column(name = "last_login")
 	private Date lastLogin;
 
 	// ========================================================================================
