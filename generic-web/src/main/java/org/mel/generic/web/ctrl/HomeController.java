@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String defaultPage() {
-		System.out.println("HomeController -> index.html");
 		return "index";
 	}
 }
