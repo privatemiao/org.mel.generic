@@ -6,7 +6,7 @@ import java.util.Map;
 public class AbstractSearchRequest extends AbstractRequest {
 
 	private String param;
-	private Map<String, Object> params = new HashMap<>();
+	private Map<String, Object> params = new HashMap<String, Object>();
 	private String orderBy;
 	private String sortBy;
 

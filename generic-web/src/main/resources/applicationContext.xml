@@ -8,6 +8,16 @@
 
 	<context:component-scan base-package="org.mel" />
 
+	<mvc:resources location="/WEB-INF/page/bower_components/" mapping="/bower_components/**" />
+	<mvc:resources location="/WEB-INF/page/css/" mapping="/css/**" />
+	<mvc:resources location="/WEB-INF/page/data/" mapping="/data/**" />
+	<mvc:resources location="/WEB-INF/page/fonts/" mapping="/fonts/**" />
+	<mvc:resources location="/WEB-INF/page/img/" mapping="/img/**" />
+	<mvc:resources location="/WEB-INF/page/js/" mapping="/js/**" />
+	<mvc:resources location="/WEB-INF/page/media/" mapping="/media/**" />
+	<mvc:resources location="/WEB-INF/page/vendors/" mapping="/vendors/**" />
+	
+	
 	<mvc:resources location="/WEB-INF/page/" mapping="/WEB-INF/page/**/*.html" />
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/page/" />
@@ -20,6 +30,17 @@
 
 	<aop:aspectj-autoproxy />
 
+	<mvc:annotation-driven>
+<!-- 		<mvc:message-converters> -->
+<!-- 			<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"> -->
+<!-- 				<property name="objectMapper"> -->
+<!-- 					<bean class="org.mel.framework.util.HibernateAwareObjectMapper" /> -->
+<!-- 				</property> -->
+<!-- 			</bean> -->
+<!-- 		</mvc:message-converters> -->
+	</mvc:annotation-driven>
+
 	<bean id="SpringContextUtil" class="org.mel.framework.util.SpringContextUtils" />
+
 	<import resource="classpath:dataSource.xml" />
 </beans>

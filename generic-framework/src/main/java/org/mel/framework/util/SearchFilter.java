@@ -29,7 +29,7 @@ public class SearchFilter {
 	 * searchParams中key的格式为OPERATOR_FIELDNAME
 	 */
 	public static Map<String, SearchFilter> parse(Map<String, Object> searchParams) {
-		Map<String, SearchFilter> filters = new HashMap<>();
+		Map<String, SearchFilter> filters = new HashMap<String, SearchFilter>();
 
 		for (Entry<String, Object> entry : searchParams.entrySet()) {
 			// 过滤掉空值

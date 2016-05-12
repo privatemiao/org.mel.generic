@@ -18,11 +18,10 @@ public class DynamicSpecifications {
 			final Class<T> entityClazz) {
 		return new Specification<T>() {
 			@SuppressWarnings({ "rawtypes", "unchecked" })
-			@Override
 			public Predicate toPredicate(Root<T> root, CriteriaQuery<?> query, CriteriaBuilder builder) {
 				if (filters != null && !filters.isEmpty()) {
-					List<Predicate> predicates = new ArrayList<>();
-					List<Predicate> orPredicates = new ArrayList<>();
+					List<Predicate> predicates = new ArrayList<Predicate>();
+					List<Predicate> orPredicates = new ArrayList<Predicate>();
 					for (SearchFilter filter : filters) {
 						// nested path translate, 如Task的名为"user.name"的filedName,
 						// 转换为Task.user.name属性
