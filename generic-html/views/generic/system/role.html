@@ -1,0 +1,77 @@
+<div class="container" data-ng-controller="RoleController as roleController">
+
+	<div class="block-header">
+		<h2>Role Page</h2>
+	</div>
+
+	<div class="card">
+		<div class="card-header">
+			<div class="row no-padding no-margin">
+				<div class="col-md-10 tool-box hidden-sm hidden-xs">
+					<button class="btn btn-default btn-icon-text waves-effect" data-ng-click="roleController.toNewRolePage()">
+						<i class="zmdi zmdi-plus"> new</i>
+					</button>
+					<button class="btn btn-default btn-icon-text waves-effect">
+						<i class="zmdi zmdi-edit"> edit</i>
+					</button>
+					<button class="btn btn-default btn-icon-text waves-effect">
+						<i class="zmdi zmdi-delete"> delete</i>
+					</button>
+				</div>
+
+				<div class="col-md-2 col-sm-10 col-xs-10 search-box">
+					<form data-ng-submit="roleController.search()">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="zmdi zmdi-search"></i></span>
+							<div class="fg-line">
+								<input type="text" class="form-control" placeholder="SEARCH" data-focus="true" data-ng-model="variables.param">
+							</div>
+						</div>
+					</form>
+				</div>
+
+				<div class="col-sm-2 col-xs-2 visible-sm visible-xs">
+					<ul class="actions">
+						<li class="dropdown" data-uib-dropdown><a href="" data-uib-dropdown-toggle> <i class="zmdi zmdi-menu"></i>
+						</a>
+							<ul class="dropdown-menu dropdown-menu-right">
+								<li><a href=""><i class="zmdi zmdi-plus"></i> New Role</a></li>
+								<li><a href=""><i class="zmdi zmdi-edit"></i> Edit Role</a></li>
+								<li><a href=""><i class="zmdi zmdi-delete"></i> Delete Role</a></li>
+								<li></li>
+							</ul></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="card-body card-padding">
+			<div class="table-responsive" data-ng-show="variables.section=='list'">
+				<table class="table table-hover table-striped table-vmiddle" data-ng-table="variables.roleTable">
+					<tr data-ng-repeat="role in $data">
+						<td data-title="'#'">{{ (params.page() - 1 ) * params.count() + $index + 1 }}</td>
+						<td data-title="'Name'" data-sortable="'name'">{{ role.name }}</td>
+						<td data-title="'Description'">{{ role.description }}</td>
+						<td data-title="'Createtime'" data-sortable="'createTime'">{{ role.createTime | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+					</tr>
+				</table>
+			</div>
+
+			<div data-ng-show="variables.section=='view'">
+				<div class="form-group fg-float m-b-30">
+					<div class="fg-line">
+						<input type="text" class="input-sm form-control fg-input"> <label class="fg-label">Name</label>
+					</div>
+				</div>
+
+				<div class="form-group fg-float m-b-30">
+					<div class="fg-line">
+						<input type="text" class="form-control fg-input"> <label class="fg-label">Description</label>
+					</div>
+				</div>
+				<button class="btn btn-primary waves-effect">Save</button>
+				<button class="btn btn-default waves-effect">Cancel</button>
+			</div>
+		</div>
+	</div>
+</div>

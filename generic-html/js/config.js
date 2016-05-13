@@ -462,7 +462,7 @@ materialAdmin.config(function($stateProvider, $urlRouterProvider) {
 		templateUrl : 'views/generic/system/user.html'
 	}).state('system.role', {
 		url : '/role',
-		templateUrl : 'http://127.0.0.1/generic/role.html'
+		templateUrl : 'views/generic/system/role.html'
 	})
 
 });
